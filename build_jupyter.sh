@@ -16,12 +16,6 @@ install_python3_venv() {
     python3 -m venv ${VENDOR_NAME}
 }
 
-install_jupyter() {
-    echo "Install jupyter"
-    cd ${ROOT_PATH}
-	${PYTHON} -m pip install jupyter
-}
-
 install_requirements() {
 	echo "Install pip"
 	cd ${ROOT_PATH}
@@ -32,6 +26,12 @@ install_setup() {
 	echo "Install setup"
 	cd ${ROOT_PATH}
 	${PYTHON} setup.py install
+}
+
+install_jupyter() {
+    echo "Install jupyter"
+    cd ${ROOT_PATH}
+	${PYTHON} -m pip install jupyter
 }
 
 install_nltk_data() {
@@ -50,7 +50,8 @@ cleanup() {
 
 install_python3_venv
 source ${VENDOR_NAME}/bin/activate
-install_jupyter
+install_requirements
 install_setup
+install_jupyter
 install_nltk_data
 cleanup

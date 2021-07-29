@@ -34,4 +34,5 @@ source ${VENDOR_NAME}/bin/activate
 install_setup
 install_requirements
 cleanup
+# connect_to_server
 jupyter notebook
